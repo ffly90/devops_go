@@ -1,0 +1,17 @@
+language: go
+go:
+- 1.13.x
+install:
+- echo 'Building App...'
+- go build -o bin/go-getting-started -v 
+deploy:
+  provider: heroku
+  api_key:
+    secure: KEY
+  app: devops-project
+  on:
+    repo: firefly-serenity/devops-project
+env:
+  global:
+    PORT: 8080
+    secure: tWlJfjPzokeGRP9HflOe6Rp5S5cOCJVlgbCDHvqIaZb0UON0R0AlhB2VreMHZj3A44lL2T0yE46zGyzFIN50NY7hycCzCcT6uJZ+RhsnP75OxeO9ueSzzPqBNz2ZsrSBqODGl97V5nQouVVLTx6EURzNRTjmZa2n5ikEhXnwXzt94Z7VvrU2PRTuiRA1xUI8Mj6vk/YYm2e0VTG7i0nbbVaszxyfzo0OX12K1/XzyP2p+W4MJWdP192eCT0POeoy6o0GrIobZLZ1XwfTVrGidoX28ugjhpFbqbk/kuWYyKrIt0i+NRPLUzWSMB3ZKdBDGXR7DWVxiUf1Flr3fc/lOVPbiFZONpQrl2DjQRDZb0lWZy9P/qp4FBpPGO3H9ALAybNZgNotNOnN4zkg4v6CdyxfrhSPPpZPzA+io0//vcA7UXP6aWq6GPnUJkRaESsBHLO8fF8YzHrLGJSJ5ejURn+x35SDuxGaiWOgev+RWsfBdFDRvq5x0+GtLoFhn3rBo2VQV8YXz67N9+EbR5wX3Bh0wi2cPjd792wW4Ln12lc3fjDRJzWdbY+1HYAsOHsGrVPRrh+jI/VfDMBng1ceBstcH4h90PKGOxuQatKfYQy3qxOWizD+7gb0bDIqtRMM9+k7FODTr7BV38c76WAVEyFPtShzVjxNdmeHZodrWe4=
